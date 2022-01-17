@@ -2,5 +2,11 @@
     "extends": "standard-with-typescript",
     "parserOptions": {
         "project": "./tsconfig.json"
+    },
+    "rules": {
+        "@typescript-eslint/space-before-function-paren": "off",
+        "@typescript-eslint/indent": "off",
+        "@typescript-eslint/no-dynamic-delete": "off",
+        "@typescript-eslint/no-misused-promises": "off"
     }
 }
