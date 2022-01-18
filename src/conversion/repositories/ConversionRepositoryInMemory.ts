@@ -3,7 +3,7 @@ import { ConversionRepository } from './contracts/ConversionRespository'
 import { v4 as uuidv4 } from 'uuid'
 
 class ConversionRepositoryInMemory implements ConversionRepository {
-    private readonly conversions: Conversion[] = []
+    private conversions: Conversion[] = []
 
     async save(conversionData: Conversion): Promise<Conversion> {
         const conversion = new Conversion(
@@ -28,6 +28,12 @@ class ConversionRepositoryInMemory implements ConversionRepository {
             return conversion.id === id
         })
         return conversion
+    }
+
+    async delete(id: string): Promise<void> {
+        this.conversions = this.conversions.filter((item) => {
+            return item.id !== id
+        })
     }
 }
 
