@@ -8,4 +8,8 @@ export class Item {
         this.name = name
         this.price = price
     }
+
+    setPrice(price: number): void {
+        this.price = price
+    }
 }
