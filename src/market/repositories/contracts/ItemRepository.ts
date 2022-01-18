@@ -6,5 +6,6 @@ export interface ItemRepository {
     update: (id: string, price: number) => Promise<Item>
     getAll: () => Promise<Item[]>
     getOne: (id: string) => Promise<Item | undefined>
+    delete: (id: string) => Promise<void>
 
 }

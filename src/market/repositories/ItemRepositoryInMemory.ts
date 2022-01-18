@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { InputDto } from '../usecases/add-item/InputDto'
 
 class ItemRepositoryInMemory implements ItemRepository {
-    private readonly items: Item[] = []
+    private items: Item[] = []
 
     async save(itemData: InputDto): Promise<Item> {
         const item = new Item(uuidv4(), itemData.name, itemData.price)
@@ -33,6 +33,12 @@ class ItemRepositoryInMemory implements ItemRepository {
             return item.id === id
         })
         return item
+    }
+
+    async delete(id: string): Promise<void> {
+        this.items = this.items.filter((item) => {
+            return item.id !== id
+        })
     }
 }
 
