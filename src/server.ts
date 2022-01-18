@@ -1,5 +1,5 @@
 import express from 'express'
-import { routes } from './market/routes'
+import { routes } from './shared/routes'
 
 const app = express()
 
