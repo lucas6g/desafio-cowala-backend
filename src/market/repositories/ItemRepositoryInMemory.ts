@@ -27,6 +27,13 @@ class ItemRepositoryInMemory implements ItemRepository {
     async getAll(): Promise<Item[]> {
         return this.items
     }
+
+    async getOne(id: string): Promise<Item | undefined> {
+        const item = this.items.find((item) => {
+            return item.id === id
+        })
+        return item
+    }
 }
 
 export default new ItemRepositoryInMemory()
