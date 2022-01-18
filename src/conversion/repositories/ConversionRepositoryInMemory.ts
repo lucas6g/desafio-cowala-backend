@@ -22,6 +22,13 @@ class ConversionRepositoryInMemory implements ConversionRepository {
     async getAll(): Promise<Conversion[]> {
         return this.conversions
     }
+
+    async getOne(id: string): Promise<Conversion | undefined> {
+        const conversion = this.conversions.find((conversion) => {
+            return conversion.id === id
+        })
+        return conversion
+    }
 }
 
 export default new ConversionRepositoryInMemory()
