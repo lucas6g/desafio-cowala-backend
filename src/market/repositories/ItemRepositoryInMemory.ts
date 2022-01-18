@@ -14,7 +14,6 @@ class ItemRepositoryInMemory implements ItemRepository {
     }
 
     async update(id: string, price: number): Promise<Item> {
-        console.log(this.items)
         const index = this.items.findIndex((item) => {
             return item.id === id
         })
@@ -23,6 +22,10 @@ class ItemRepositoryInMemory implements ItemRepository {
         const updatedItem = this.items[index]
 
         return updatedItem
+    }
+
+    async getAll(): Promise<Item[]> {
+        return this.items
     }
 }
 
