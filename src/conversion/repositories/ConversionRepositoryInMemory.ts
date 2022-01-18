@@ -18,6 +18,10 @@ class ConversionRepositoryInMemory implements ConversionRepository {
         this.conversions.push(conversion)
         return conversion
     }
+
+    async getAll(): Promise<Conversion[]> {
+        return this.conversions
+    }
 }
 
 export default new ConversionRepositoryInMemory()
