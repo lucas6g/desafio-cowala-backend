@@ -22,8 +22,9 @@ Além das tecnologias abaixo, esta aplicação foi desenvolvida com as melhores 
 
 ### Como executar
 
-- Clone o repositório ```git clone https://github.com/lucas6g/gobarber-backend.git```
-- Vá até o diretório ```cd gobarber-backend```
-- Execute ```yarn``` para instalar as dependências
+- Clone o repositório ```git clone https://https://github.com/lucas6g/desafio-cowala-backend.git```
+- Vá até o diretório ```cd desafio-cowala-backend```
+- Execute ```yarn ou npm install``` para instalar as dependências
+- Execute ```yarn dev ou npm run dev```para rodar o servidor em desemvolvimento
 
 Você pode realizar requisições REST através do Insomnia
